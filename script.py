@@ -12,15 +12,15 @@ def read_mail_list():
         return mail_list
 
 def get_sender_info():
-    sender = input('Mail adresinizi giriniz: ')
-    password = input('Mail şifrenizi giriniz (Uygulama Şifresi): ')
+    sender = input('Type your Mail address: ')
+    password = input('Type your Application Password: ')
     return sender, password
 
 def get_message_info():
-    subject = input('Mail konusunu giriniz: ')
-    print('Mail HTML içeriği için mail.html dosyasını düzenleyiniz.')
+    subject = input('Type subject of the mail')
+    print('Edit mail.html file to change the content of the mail.')
     time.sleep(3)
-    print("Mail'e eklemek istediğiniz dosyaları attachments klasörüne ekleyiniz.")
+    print("Add all the files you want to attach to the mail in the attachments folder.")
     time.sleep(3)
     return subject
 
@@ -74,8 +74,8 @@ def show_time_boiii():
         msg=create_message(subject,sender,mail)
         server=init(sender,password)
         send_mail(msg,server)
-        print(f'{mail} adresine mail gönderildi.')
+        print(f'Mail sent to {mail} address.')
         time.sleep(3)
-    print('Tüm mail gönderildi.')
+    print('All mails sent.')
 
 show_time_boiii()
